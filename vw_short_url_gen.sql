@@ -1,10 +1,10 @@
 ﻿CREATE VIEW [dbo].[vw_short_url_gen]
 AS
 SELECT
-	short_url = STRING_AGG(c1, '')
+	short_url_code = STRING_AGG(c1, '')
 FROM
 	(SELECT c1
-			, bucket = NTILE (18) OVER (ORDER BY NEWID())
+		, bucket = NTILE (18) OVER (ORDER BY NEWID())
 	FROM	(VALUES
 			('A'), ('B'), ('C'), ('D'), ('E'), ('F'), ('G'), ('H'), ('I'), ('J'),
 			('K'), ('L'), ('M'), ('N'), ('O'), ('P'), ('Q'), ('R'), ('S'), ('T'),
